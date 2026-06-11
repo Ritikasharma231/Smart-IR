@@ -18,34 +18,18 @@ const History = () => {
   const [filteredAssessments, setFilteredAssessments] = useState([]);
   const [filter, setFilter] = useState('all');
   const [sortOrder, setSortOrder] = useState('date-desc');
-  const [selectedAssessment, setSelectedAssessment] = useState(null);
 
   useEffect(() => {
     loadAssessments();
   }, []);
 
   useEffect(() => {
-    applyFiltersAndSort();
-  }, [assessments, filter, sortOrder]);
-
-  const loadAssessments = () => {
-    try {
-      const storedAssessments = JSON.parse(localStorage.getItem('assessments') || '[]');
-      setAssessments(storedAssessments);
-    } catch (error) {
-      console.error('Error loading assessments:', error);
-    }
-  };
-
-  const applyFiltersAndSort = () => {
     let filtered = [...assessments];
 
-    // Apply filter
     if (filter !== 'all') {
       filtered = filtered.filter(assessment => assessment.type.toLowerCase() === filter);
     }
 
-    // Apply sort
     filtered.sort((a, b) => {
       if (sortOrder === 'date-desc') {
         return new Date(b.date) - new Date(a.date);
@@ -60,6 +44,15 @@ const History = () => {
     });
 
     setFilteredAssessments(filtered);
+  }, [assessments, filter, sortOrder]);
+
+  const loadAssessments = () => {
+    try {
+      const storedAssessments = JSON.parse(localStorage.getItem('assessments') || '[]');
+      setAssessments(storedAssessments);
+    } catch (error) {
+      console.error('Error loading assessments:', error);
+    }
   };
 
   const handleDelete = (id) => {

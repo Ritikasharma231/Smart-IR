@@ -82,6 +82,8 @@ const IntermediateAssessment = () => {
           newErrors.triglycerides = 'Triglycerides must be between 20 and 1000 mg/dL';
         }
         break;
+      default:
+        break;
     }
 
     return newErrors;

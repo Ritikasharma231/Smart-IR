@@ -89,6 +89,8 @@ const BasicAssessment = () => {
         break;
       case 2: // Review - no validation needed
         break;
+      default:
+        break;
     }
 
     setErrors(newErrors);
@@ -219,7 +221,6 @@ const BasicAssessment = () => {
       </div>
       <div className="flex justify-between mt-4">
         {steps.map((step, index) => {
-          const Icon = step.icon;
           return (
             <div key={index} className="flex flex-col items-center">
               <div className={`mfp-progress-step ${
