@@ -10,6 +10,7 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import apiService from '../services/apiService';
+import groqService from '../services/groqService';
 
 const BasicAssessment = () => {
   const navigate = useNavigate();
@@ -143,6 +144,15 @@ const BasicAssessment = () => {
       // Map response to frontend format
       const result = apiService.mapFromBackendResponse(backendResponse, formData);
       
+      // Try to get AI-powered explanation from Groq
+      try {
+        const aiExplanation = await groqService.generateHealthExplanation(result);
+        result.explanation = aiExplanation;
+      } catch (groqError) {
+        console.log('Groq AI explanation not available, using default explanation');
+        // Keep the existing explanation from backend
+      }
+      
       // Save to localStorage
       const existingAssessments = JSON.parse(localStorage.getItem('assessments') || '[]');
       const newAssessment = {
@@ -162,6 +172,14 @@ const BasicAssessment = () => {
       try {
         const fallbackResult = apiService.getFallbackPrediction(formData);
         const result = apiService.mapFromBackendResponse(fallbackResult, formData);
+        
+        // Try to get AI-powered explanation from Groq even for fallback
+        try {
+          const aiExplanation = await groqService.generateHealthExplanation(result);
+          result.explanation = aiExplanation;
+        } catch (groqError) {
+          console.log('Groq AI explanation not available for fallback');
+        }
         
         const existingAssessments = JSON.parse(localStorage.getItem('assessments') || '[]');
         const newAssessment = {

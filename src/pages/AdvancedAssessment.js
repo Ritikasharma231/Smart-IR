@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import apiService from '../services/apiService';
+import groqService from '../services/groqService';
 
 const AdvancedAssessment = () => {
   const navigate = useNavigate();
@@ -167,6 +168,15 @@ const AdvancedAssessment = () => {
       
       // Map response to frontend format
       const result = apiService.mapFromBackendResponse(backendResponse, formData);
+      
+      // Try to get AI-powered explanation from Groq
+      try {
+        const aiExplanation = await groqService.generateHealthExplanation(result);
+        result.explanation = aiExplanation;
+      } catch (groqError) {
+        console.log('Groq AI explanation not available, using default explanation');
+        // Keep the existing explanation from backend
+      }
       
       // Save to localStorage
       const existingAssessments = JSON.parse(localStorage.getItem('assessments') || '[]');

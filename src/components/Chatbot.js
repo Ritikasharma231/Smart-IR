@@ -10,6 +10,7 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { API_ENDPOINTS } from '../config/api';
+import groqService from '../services/groqService';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,7 +104,15 @@ const Chatbot = () => {
 
   const getChatbotResponse = async (message) => {
     try {
-      // Try backend first
+      // Try Groq AI service first
+      const response = await groqService.getChatbotResponse(message, getUserContext());
+      return response;
+    } catch (error) {
+      console.log('Groq API not available, trying backend');
+    }
+
+    try {
+      // Try backend second
       const response = await fetch(API_ENDPOINTS.BACKEND.CHAT, {
         method: 'POST',
         headers: {
