@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  ChartBarIcon,
   HeartIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon,
@@ -29,7 +28,6 @@ const Results = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [assessment, setAssessment] = useState(null);
-  const [showDetails, setShowDetails] = useState(false);
 
   // Helper function to format AI explanation into structured content
   const formatExplanation = (explanation) => {

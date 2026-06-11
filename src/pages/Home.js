@@ -15,14 +15,7 @@ import {
 import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
-  const { user, isAuthenticated } = useAuth();
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { isAuthenticated } = useAuth();
 
   const features = [
     {

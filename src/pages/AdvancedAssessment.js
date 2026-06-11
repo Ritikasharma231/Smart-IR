@@ -117,6 +117,8 @@ const AdvancedAssessment = () => {
           newErrors.exerciseDuration = 'Duration must be between 5 and 180 minutes';
         }
         break;
+      default:
+        break;
     }
 
     return newErrors;
