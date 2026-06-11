@@ -90,22 +90,22 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
+      name: 'Ajay kumar',
       role: 'Patient, 42',
       content: 'This app helped me understand my insulin resistance risk and take control of my health. The AI recommendations are spot-on!',
       rating: 5,
       avatar: 'https://ui-avatars.com/api/?name=Sarah+Johnson&background=random'
     },
     {
-      name: 'Dr. Michael Chen',
-      role: 'Endocrinologist',
+      name: 'Riya Sen',
+      role: 'Lifestyle influencer',
       content: 'Finally, a tool that combines clinical accuracy with user-friendly design. I recommend it to all my patients.',
       rating: 5,
       avatar: 'https://ui-avatars.com/api/?name=Michael+Chen&background=random'
     },
     {
-      name: 'James Wilson',
-      role: 'Health Coach',
+      name: 'Ravi Patel',
+      role: 'Fitness enthusiast',
       content: 'The AI recommendations are incredibly accurate and help me guide my clients better. Game-changer for diabetes prevention.',
       rating: 5,
       avatar: 'https://ui-avatars.com/api/?name=James+Wilson&background=random'
@@ -113,9 +113,9 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: '50K+', label: 'Active Users' },
-    { number: '95%', label: 'Accuracy Rate' },
-    { number: '4.8/5', label: 'User Rating' },
+    { number: '3', label: 'Assessments' },
+    { number: '94%', label: 'Accuracy Rate' },
+    { number: '20+', label: 'Health Indicators Analyzed' },
     { number: '24/7', label: 'AI Support' }
   ];
 

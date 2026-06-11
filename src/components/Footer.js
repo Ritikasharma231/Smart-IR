@@ -53,10 +53,10 @@ const Footer = () => {
   ];
 
   const stats = [
-    { number: '50K+', label: 'Active Users', color: 'text-blue-400' },
-    { number: '95%', label: 'Accuracy Rate', color: 'text-green-400' },
+    { number: '3', label: 'Assessments', color: 'text-blue-400' },
+    { number: '94%', label: 'Accuracy Rate', color: 'text-green-400' },
     { number: '24/7', label: 'AI Support', color: 'text-purple-400' },
-    { number: '4.8/5', label: 'User Rating', color: 'text-yellow-400' }
+    { number: '20+', label: 'Health Indicators Analyzed', color: 'text-yellow-400' }
   ];
 
   const certifications = [
@@ -100,7 +100,7 @@ const Footer = () => {
                 <HeartIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold">Insulin Tracker</span>
+                <span className="text-xl font-bold">Smart-IR Insulin Tracker</span>
                 <p className="text-xs text-gray-400 mt-1">AI-Powered Health Monitoring</p>
               </div>
             </div>
