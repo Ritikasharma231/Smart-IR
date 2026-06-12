@@ -19,18 +19,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    product: [
-      { name: 'Features', href: '#features', description: 'AI-powered assessments' },
-      { name: 'Assessments', href: '#assessments', description: 'Basic to Advanced' },
-      { name: 'Pricing', href: '#pricing', description: 'Free & Premium plans' },
-      { name: 'API', href: '#api', description: 'Developer access' }
-    ],
-    company: [
-      { name: 'About Us', href: '#about', description: 'Our mission & team' },
-      { name: 'Careers', href: '#careers', description: 'Join our team' },
-      { name: 'Blog', href: '#blog', description: 'Health insights' },
-      { name: 'Press', href: '#press', description: 'News & media' }
-    ],
     support: [
       { name: 'Help Center', href: '#help', description: 'Get assistance' },
       { name: 'Contact Us', href: '#contact', description: 'Reach out' },
@@ -92,7 +80,7 @@ const Footer = () => {
       
       {/* Main Footer Content */}
       <div className="container-mfp py-16 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
@@ -140,44 +128,6 @@ const Footer = () => {
                 })}
               </div>
             </div>
-          </div>
-          
-          {/* Product Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 text-gray-100">Product</h3>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 group block"
-                  >
-                    <span className="block group-hover:translate-x-1 transition-transform duration-200">{link.name}</span>
-                    <span className="text-xs text-gray-500 block">{link.description}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Company Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 text-gray-100">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 group block"
-                  >
-                    <span className="block group-hover:translate-x-1 transition-transform duration-200">{link.name}</span>
-                    <span className="text-xs text-gray-500 block">{link.description}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
           
           {/* Support & Legal */}
