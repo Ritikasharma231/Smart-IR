@@ -1,9 +1,7 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AuthProvider, useAuth } from './context/AuthContext';
-
-// Import components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -20,6 +18,17 @@ import Profile from './pages/Profile';
 import AssessmentGuide from './pages/AssessmentGuide';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -57,6 +66,7 @@ const AppContent = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
+        <ScrollToTop />
         <AnimatePresence mode="wait">
           <Routes>
             {/* Public routes */}

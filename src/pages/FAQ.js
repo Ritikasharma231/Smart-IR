@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 const FAQ = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const faqs = [
     {
       question: "What is insulin resistance?",

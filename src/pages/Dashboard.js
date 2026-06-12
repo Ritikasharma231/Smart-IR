@@ -22,6 +22,10 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // Load data from localStorage
     const loadDashboardData = () => {
       try {

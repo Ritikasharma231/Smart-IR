@@ -41,12 +41,6 @@ const Footer = () => {
     { number: '20+', label: 'Health Indicators Analyzed', color: 'text-yellow-400' }
   ];
 
-  const certifications = [
-    { name: '', icon: ShieldCheckIcon, color: 'text-green-400' },
-    { name: '', icon: CheckCircleIcon, color: 'text-blue-400' },
-    { name: '', icon: DocumentTextIcon, color: 'text-purple-400' }
-  ];
-
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -131,7 +125,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-gray-100">Email</p>
-                <p className="text-gray-300 text-sm">support@Smart-IR.com</p>
+                <p className="text-gray-300 text-sm">support@smartir.com</p>
               </div>
             </div>
             
@@ -156,21 +150,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Certifications */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {certifications.map((cert, index) => {
-              const Icon = cert.icon;
-              return (
-                <div key={index} className="flex items-center space-x-2 bg-gray-800/30 rounded-full px-4 py-2 backdrop-blur-sm border border-gray-700/50">
-                  <Icon className={`h-4 w-4 ${cert.color}`} />
-                  <span className="text-sm text-gray-300">{cert.name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
       
       {/* Bottom Footer */}
@@ -179,7 +158,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-400 text-sm">
-                © {currentYear} Insulin Tracker. All rights reserved.
+                © {currentYear} Smart-IR Tracker. All rights reserved.
               </p>
               <p className="text-gray-500 text-xs mt-1">
                 Made with ❤️ for your health journey

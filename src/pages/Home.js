@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -16,6 +16,10 @@ import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
   const { user, isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -99,7 +103,7 @@ const Home = () => {
     {
       name: 'Riya Sen',
       role: 'Lifestyle influencer',
-      content: 'Finally, a tool that combines clinical accuracy with user-friendly design. I recommend it to all my patients.',
+      content: 'Finally, a tool that combines clinical accuracy with user-friendly design. I recommend it to all my friends.',
       rating: 5,
       avatar: 'https://ui-avatars.com/api/?name=Michael+Chen&background=random'
     },
@@ -140,8 +144,7 @@ const Home = () => {
                   <span className="text-gradient"> Insulin Health</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Get AI-powered insights into your insulin resistance risk with our comprehensive health assessment platform. 
-                  Trusted by healthcare professionals and users worldwide.
+                  Join thousands of users who have taken control of their insulin health with our AI-powered platform
                 </p>
               </div>
               
@@ -153,21 +156,21 @@ const Home = () => {
               >
                 {isAuthenticated ? (
                   <>
-                    <Link to="/dashboard" className="mfp-btn-primary">
+                    <Link to="/dashboard" onClick={() => window.scrollTo(0, 0)} className="mfp-btn-primary">
                       Go to Dashboard
                       <ArrowRightIcon className="ml-2 h-5 w-5" />
                     </Link>
-                    <Link to="/assessment/basic" className="mfp-btn-outline">
-                      Take Assessment
+                    <Link to="/assessment/basic" onClick={() => window.scrollTo(0, 0)} className="mfp-btn-outline">
+                      Try Quick Assessment
                     </Link>
                   </>
                 ) : (
                   <>
-                    <Link to="/signup" className="mfp-btn-primary">
-                      Get Started Free
+                    <Link to="/signup" onClick={() => window.scrollTo(0, 0)} className="mfp-btn-primary">
+                      Get Started 
                       <ArrowRightIcon className="ml-2 h-5 w-5" />
                     </Link>
-                    <Link to="/login" className="mfp-btn-outline">
+                    <Link to="/login" onClick={() => window.scrollTo(0, 0)} className="mfp-btn-outline">
                       Sign In
                     </Link>
                   </>
@@ -178,15 +181,15 @@ const Home = () => {
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
                 <div className="flex items-center">
                   <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                  <span>No Credit Card Required</span>
+                  <span>No Payment Required</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Clinically Validated</span>
+                  <span>Early Risk Detection</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                  <span>HIPAA Compliant</span>
+                  <span>Zero Privacy Concerns</span>
                 </div>
               </div>
             </motion.div>
@@ -225,7 +228,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
-              Why Choose Insulin Tracker?
+              Why Choose Smart-IR Tracker?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

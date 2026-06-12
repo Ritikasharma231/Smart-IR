@@ -24,6 +24,10 @@ const BasicAssessment = () => {
     waistCircumference: '',
     bmi: ''
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [errors, setErrors] = useState({});
   const [isCalculating, setIsCalculating] = useState(false);
   const [apiError, setApiError] = useState('');

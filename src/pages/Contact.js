@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -30,7 +33,7 @@ const Contact = () => {
               <div className="bg-blue-50 rounded-xl p-6 text-center">
                 <EnvelopeIcon className="h-8 w-8 text-blue-600 mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600 text-sm">support@Smart-IR.com</p>
+                <p className="text-gray-600 text-sm">support@smartir.com</p>
               </div>
 
               <div className="bg-green-50 rounded-xl p-6 text-center">

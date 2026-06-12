@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, DocumentTextIcon, ChartBarIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
 const AssessmentGuide = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
