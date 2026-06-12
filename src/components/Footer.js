@@ -20,10 +20,10 @@ const Footer = () => {
 
   const footerLinks = {
     support: [
-      { name: 'Getting Started', href: '#getting-started', description: 'How to use the app' },
-      { name: 'Assessment Guide', href: '#assessment-guide', description: 'Understanding assessments' },
-      { name: 'FAQ', href: '#faq', description: 'Common questions' },
-      { name: 'Contact Support', href: '#contact', description: 'Get help' }
+      { name: 'Getting Started', href: '/signup', description: 'How to use the app' },
+      { name: 'Assessment Guide', href: '/assessment-guide', description: 'Understanding assessments' },
+      { name: 'FAQ', href: '/faq', description: 'Common questions' },
+      { name: 'Contact Support', href: '/contact', description: 'Get help' }
     ]
   };
 
@@ -52,16 +52,16 @@ const Footer = () => {
   };
 
   const handleLinkClick = (e, href) => {
-    e.preventDefault();
     // Handle navigation or scroll to section
     if (href.startsWith('#')) {
+      e.preventDefault();
       const element = document.getElementById(href.substring(1));
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Handle external links or navigation
-      console.log(`Navigate to: ${href}`);
+      // For regular routes, scroll to top when navigating
+      window.scrollTo(0, 0);
     }
   };
 
@@ -99,28 +99,6 @@ const Footer = () => {
                   <div className="text-xs text-gray-400">{stat.label}</div>
                 </div>
               ))}
-            </div>
-            
-            {/* Social Links */}
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-gray-300">Connect With Us</h4>
-              <div className="flex space-x-3">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      onClick={(e) => handleLinkClick(e, social.href)}
-                      className="w-10 h-10 bg-gray-800/50 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all duration-200 hover:scale-110 border border-gray-700/50 backdrop-blur-sm"
-                      aria-label={social.label}
-                      title={social.label}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
           </div>
           

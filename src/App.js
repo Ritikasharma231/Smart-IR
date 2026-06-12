@@ -17,6 +17,9 @@ import AdvancedAssessment from './pages/AdvancedAssessment';
 import Results from './pages/Results';
 import History from './pages/History';
 import Profile from './pages/Profile';
+import AssessmentGuide from './pages/AssessmentGuide';
+import FAQ from './pages/FAQ';
+import Contact from './pages/Contact';
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -98,6 +101,45 @@ const AppContent = () => {
                     <Signup />
                   </motion.div>
                 </PublicRoute>
+              }
+            />
+            <Route
+              path="/assessment-guide"
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <AssessmentGuide />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/faq"
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FAQ />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Contact />
+                </motion.div>
               }
             />
 
