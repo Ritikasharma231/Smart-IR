@@ -20,16 +20,10 @@ const Footer = () => {
 
   const footerLinks = {
     support: [
-      { name: 'Help Center', href: '#help', description: 'Get assistance' },
-      { name: 'Contact Us', href: '#contact', description: 'Reach out' },
+      { name: 'Getting Started', href: '#getting-started', description: 'How to use the app' },
+      { name: 'Assessment Guide', href: '#assessment-guide', description: 'Understanding assessments' },
       { name: 'FAQ', href: '#faq', description: 'Common questions' },
-      { name: 'Status', href: '#status', description: 'System status' }
-    ],
-    legal: [
-      { name: 'Privacy Policy', href: '#privacy', description: 'Data protection' },
-      { name: 'Terms of Service', href: '#terms', description: 'Usage terms' },
-      { name: 'Cookie Policy', href: '#cookies', description: 'Cookie usage' },
-      { name: 'HIPAA Compliance', href: '#hipaa', description: 'Healthcare compliance' }
+      { name: 'Contact Support', href: '#contact', description: 'Get help' }
     ]
   };
 
@@ -48,9 +42,9 @@ const Footer = () => {
   ];
 
   const certifications = [
-    { name: 'HIPAA Compliant', icon: ShieldCheckIcon, color: 'text-green-400' },
-    { name: 'Clinically Validated', icon: CheckCircleIcon, color: 'text-blue-400' },
-    { name: 'FDA Registered', icon: DocumentTextIcon, color: 'text-purple-400' }
+    { name: '', icon: ShieldCheckIcon, color: 'text-green-400' },
+    { name: '', icon: CheckCircleIcon, color: 'text-blue-400' },
+    { name: '', icon: DocumentTextIcon, color: 'text-purple-400' }
   ];
 
   const handleScrollToTop = () => {
@@ -130,27 +124,11 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Support & Legal */}
+          {/* Support */}
           <div>
             <h3 className="font-semibold text-lg mb-6 text-gray-100">Support</h3>
-            <ul className="space-y-3 mb-6">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 group block"
-                  >
-                    <span className="block group-hover:translate-x-1 transition-transform duration-200">{link.name}</span>
-                    <span className="text-xs text-gray-500 block">{link.description}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            
-            <h3 className="font-semibold text-lg mb-6 text-gray-100">Legal</h3>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
@@ -175,7 +153,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-gray-100">Email</p>
-                <p className="text-gray-300 text-sm">support@insulintracker.com</p>
+                <p className="text-gray-300 text-sm">support@Smart-IR.com</p>
               </div>
             </div>
             
@@ -185,7 +163,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-gray-100">Phone</p>
-                <p className="text-gray-300 text-sm">1-800-INSULIN</p>
+                <p className="text-gray-300 text-sm">1800-102-5661</p>
               </div>
             </div>
             
@@ -195,7 +173,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-gray-100">Office</p>
-                <p className="text-gray-300 text-sm">Medical District, CA 90210</p>
+                <p className="text-gray-300 text-sm">SGT University,Gurugram</p>
               </div>
             </div>
           </div>
